@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars - AutoVerse</title>
+    <link rel="stylesheet" href="assets/css/cars.css">
+</head>
+<body>
+    <section class="cars-page">
+        <div class="cars-header">
+            <h2>🚗 Explore Cars</h2>
+            <p>Browse cars shared by our community, search for specific models, and filter results based on your preferences.</p>
+        </div>
+
+        <div class="cars-toolbar">
+            <input type="text" id="searchInput" placeholder="Search by model..." />
+
+            <input type="number" id="minYear" placeholder="Min Year (e.g. 2015)" min="1886" max="2026" />
+            <input type="number" id="maxYear" placeholder="Max Year (e.g. 2026)" min="1886" max="2026" />
+
+            <input type="number" id="minHorsepower" placeholder="Min HP" min="1" />
+
+            <select id="sortOption">
+                <option value="">Sort By</option>
+                <option value="year-desc">Year: Newest First</option>
+                <option value="year-asc">Year: Oldest First</option>
+                <option value="hp-desc">Horsepower: High to Low</option>
+                <option value="hp-asc">Horsepower: Low to High</option>
+                <option value="model-asc">Model: A-Z</option>
+                <option value="model-desc">Model: Z-A</option>
+            </select>
+
+            <button id="resetFiltersBtn" type="button">Reset</button>
+        </div>
+
+        <div id="carsEmptyState" class="empty-state" style="display: none;">
+            <p>No cars found matching your search or filter criteria.</p>
+        </div>
+
+        <div class="cars-container" id="carsContainer">
+            <!-- Cars will be dynamically loaded here -->
+        </div>
+
+        <div class="add-car" id="addCarSection">
+            <h3>➕ Add a New Car</h3>
+
+            <input type="text" id="carModel" placeholder="Car Model" required>
+            <input type="number" id="carYear" placeholder="Year" min="1886" max="2026" required>
+            <input type="text" id="engine" placeholder="Engine (e.g. 2.0L VTEC)" required>
+            <input type="number" id="horsepower" placeholder="Horsepower" min="1" required>
+            <input type="file" id="carImages" accept="image/*" required>
+
+            <button id="addCarBtn" type="button" onclick="addNewCar()">Add Car</button>
+        </div>
+    </section>
+
+    <script type="module" src="../assets/js/cars.js"></script>
+</body>
+</html>

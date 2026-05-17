@@ -1,0 +1,80 @@
+h2#welcomeMessage {
+    text-align: center;
+    color: #00C851;
+    margin-top: 20px;
+}
+
+.info-section {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    text-align: center;
+}
+
+.info-section h3 {
+    color: #00C851;
+}
+
+.admin-actions button {
+    background-color: #00C851;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.admin-actions button:hover {
+    background-color: #007e3a;
+}
+
+.highlight-section {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    max-width: 900px;
+}
+
+.highlight-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.highlight-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    width: calc(33.33% - 20px);
+    min-width: 280px;
+    color: #ccc;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.highlight-card:hover {
+    transform: scale(1.05);
+}
+
+.about-section {
+    padding: 20px;
+    margin: 20px auto;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    max-width: 900px;
+    text-align: center;
+    color: #ccc;
+}
+
+.about-section h3 {
+    color: #00C851;
+}

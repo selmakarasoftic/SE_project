@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meetups - AutoVerse</title>
+    <link rel="stylesheet" href="assets/css/meetups.css">
+</head>
+<body>
+
+    <h2>🚗 Car Meetups</h2>
+    <p>Join upcoming car meetups and events in your area!</p>
+
+    <div id="meetupsEmptyState" class="empty-state" style="display:none;">
+        <p>No meetups scheduled yet.</p>
+    </div>
+
+    <div class="meetups-container" id="meetupsContainer"></div>
+
+    <div class="add-meetup" id="addMeetupForm">
+        <h3>Add a New Meetup</h3>
+        <input type="text" id="meetupTitle" placeholder="Meetup Title">
+        <input type="date" id="meetupDate">
+        <input type="text" id="meetupLocation" placeholder="Location">
+        <textarea id="meetupDescription" placeholder="Description"></textarea>
+        <button onclick="addMeetup()">➕ Add Meetup</button>
+    </div>
+
+    <script type="module" src="../assets/js/meetups.js"></script>
+</body>
+</html>
