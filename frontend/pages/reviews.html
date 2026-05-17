@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Reviews</title>
+    <link rel="stylesheet" href="assets/css/reviews.css">
+</head>
+<body>
+
+    <section class="reviews-page">
+        <div class="reviews-header">
+            <h2>Car Reviews & Parts</h2>
+            <p>Check out the latest reviews from car enthusiasts about cars and parts.</p>
+        </div>
+
+        <div class="reviews-toolbar">
+            <input type="text" id="reviewSearchInput" placeholder="Search reviews by title or content..." />
+
+            <select id="reviewTypeFilter">
+                <option value="">All Types</option>
+                <option value="car">Car</option>
+                <option value="part">Part</option>
+            </select>
+
+            <select id="reviewRatingFilter">
+                <option value="">All Ratings</option>
+                <option value="5">5 Stars</option>
+                <option value="4">4 Stars & above</option>
+                <option value="3">3 Stars & above</option>
+                <option value="2">2 Stars & above</option>
+                <option value="1">1 Star & above</option>
+            </select>
+
+            <button id="resetReviewFiltersBtn" type="button">Reset</button>
+        </div>
+
+        <div id="reviewsEmptyState" class="empty-state" style="display: none;">
+            <p>No reviews found matching your filters.</p>
+        </div>
+
+        <div class="reviews-container" id="reviewsContainer"></div>
+
+        <div class="add-review">
+            <h3 style="color: steelblue;">Add a New Review</h3>
+
+            <select id="reviewType">
+                <option value="car">Car</option>
+                <option value="part">Part</option>
+            </select>
+
+            <input type="text" id="reviewTitle" placeholder="Review Title (e.g., BMW M3 or Brembo Brake Pads)">
+            <textarea id="reviewContent" placeholder="Your Review"></textarea>
+
+            <select id="reviewRating">
+                <option value="5">⭐⭐⭐⭐⭐</option>
+                <option value="4">⭐⭐⭐⭐☆</option>
+                <option value="3">⭐⭐⭐☆☆</option>
+                <option value="2">⭐⭐☆☆☆</option>
+                <option value="1">⭐☆☆☆☆</option>
+            </select>
+
+            <button onclick="addReview()">➕ Add Review</button>
+        </div>
+    </section>
+
+    <script type="module" src="../assets/js/reviews.js"></script>
+</body>
+</html>
