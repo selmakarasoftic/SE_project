@@ -1,0 +1,55 @@
+.register-container {
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 100px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.register-container input,
+.register-container select {
+    width: 90%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.register-container button {
+    background-color: #00C851;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+.register-container button:hover {
+    background-color: #007e3a;
+}
+
+#registerMessage {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.login-link {
+    margin-top: 15px;
+    text-align: center;
+    color: #ccc;
+}
+
+.login-link a {
+    color: #00C851;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}

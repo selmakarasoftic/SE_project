@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="assets/css/profile.css">
+
+<h2>👤 User Profile</h2>
+
+<div class="profile-info" id="profileInfo">
+    <p><strong>Username:</strong> <span id="profileUsername"></span></p>
+    <p><strong>Role:</strong> <span id="profileRole"></span></p>
+    <p><strong>Registered on:</strong> <span id="profileRegistered"></span></p>
+
+    <div id="adminStats" style="display: none;">
+        <p><strong>Total Cars Added:</strong> <span id="totalCars"></span></p>
+        <p><strong>Total Reviews:</strong> <span id="totalReviews"></span></p>
+        <p><strong>Total Meetups:</strong> <span id="totalMeetups"></span></p>
+    </div>
+</div>
+
+<div class="change-password">
+    <h3>🔑 Change Password</h3>
+    <input type="password" id="oldPassword" placeholder="Old Password">
+    <input type="password" id="newPassword" placeholder="New Password">
+    <button onclick="changePassword()">Change Password</button>
+</div>
+
+<div class="my-listings">
+    <h3>🚘 My Listings</h3>
+    <div id="myListingsEmpty" class="profile-empty-state" style="display: none;">
+        <p>You have not added any cars yet.</p>
+    </div>
+    <div class="my-listings-container" id="myListingsContainer"></div>
+</div>
+
+<div style="text-align:center;">
+    <button onclick="logoutUser()">Logout</button>
+    <button id="deleteAccountBtn" onclick="deleteAccount()">Delete Account</button>
+</div>
+
+<p id="profileMessage"></p>
+
+<script type="module" src="../assets/js/profile.js"></script>
