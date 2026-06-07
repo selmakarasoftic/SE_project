@@ -189,7 +189,7 @@ window.addReview = function () {
         console.log(pair[0], pair[1]);
     }
 
-    fetch("/SelmaKarasoftic/WebProgramming/backend/reviews", {
+    fetch("/backend/reviews", {
         method: "POST",
         body: formData,
         headers: {

@@ -4,3 +4,7 @@ let Constants = {
     ADMIN_ROLE: "admin"
 }
 export default Constants;
+/*
+const Constants = {
+    PROJECT_BASE_URL: "/backend/"
+};*/

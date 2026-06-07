@@ -45,7 +45,7 @@ function setupFilters() {
 
 function fetchAndRenderCars() {
     CarService.getAllCars(
-        function(result) {
+        function (result) {
             if (Array.isArray(result)) {
                 allCars = result;
             } else if (result && result.data && Array.isArray(result.data)) {
@@ -58,7 +58,7 @@ function fetchAndRenderCars() {
 
             applyFilters();
         },
-        function(xhr) {
+        function (xhr) {
             console.error("Failed to fetch cars:", xhr.responseText);
             alert("Failed to fetch cars: " + xhr.responseText);
         }
@@ -266,32 +266,32 @@ function addNewCar() {
     formData.append("horsepower", horsepower);
     formData.append("image", imageInput.files[0]);
 
-    fetch("/SelmaKarasoftic/WebProgramming/backend/cars", {
+    fetch("/backend/cars", {
         method: "POST",
         body: formData,
         headers: {
             "Authorization": localStorage.getItem("user_token")
         }
     })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert("Car added successfully!");
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert("Car added successfully!");
 
-            document.getElementById("carModel").value = "";
-            document.getElementById("carYear").value = "";
-            document.getElementById("engine").value = "";
-            document.getElementById("horsepower").value = "";
-            document.getElementById("carImages").value = "";
+                document.getElementById("carModel").value = "";
+                document.getElementById("carYear").value = "";
+                document.getElementById("engine").value = "";
+                document.getElementById("horsepower").value = "";
+                document.getElementById("carImages").value = "";
 
-            fetchAndRenderCars();
-        } else {
-            alert("Failed to add car: " + (data.message || "Unknown error"));
-        }
-    })
-    .catch(error => {
-        alert("Failed to add car: " + error);
-    });
+                fetchAndRenderCars();
+            } else {
+                alert("Failed to add car: " + (data.message || "Unknown error"));
+            }
+        })
+        .catch(error => {
+            alert("Failed to add car: " + error);
+        });
 }
 
 function deleteCar(id) {
@@ -299,7 +299,7 @@ function deleteCar(id) {
 
     CarService.deleteCar(
         id,
-        function(result) {
+        function (result) {
             if (result && result.success) {
                 fetchAndRenderCars();
                 alert("Car deleted successfully!");
@@ -307,7 +307,7 @@ function deleteCar(id) {
                 alert("Failed to delete car: " + (result.message || "Unknown error"));
             }
         },
-        function(xhr) {
+        function (xhr) {
             alert("Failed to delete car: " + xhr.responseText);
         }
     );
@@ -363,12 +363,12 @@ function showEditForm(car) {
 
     document.body.appendChild(modal);
 
-    document.getElementById("editCarForm").addEventListener("submit", function(e) {
+    document.getElementById("editCarForm").addEventListener("submit", function (e) {
         e.preventDefault();
         updateCar(car.id);
     });
 
-    document.getElementById("cancelEditCarBtn").addEventListener("click", function() {
+    document.getElementById("cancelEditCarBtn").addEventListener("click", function () {
         closeModal();
     });
 }
@@ -405,7 +405,7 @@ function updateCar(carId) {
     CarService.updateCar(
         carId,
         formData,
-        function(result) {
+        function (result) {
             if (result && result.success) {
                 alert("Car updated successfully!");
                 closeModal();
@@ -414,13 +414,13 @@ function updateCar(carId) {
                 alert("Failed to update car: " + (result.message || "Unknown error"));
             }
         },
-        function(xhr) {
+        function (xhr) {
             alert("Failed to update car: " + xhr.responseText);
         }
     );
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
     if ($("#car-form").length) {
         $("#car-form").validate({
             rules: {
@@ -471,7 +471,7 @@ $(document).ready(function() {
                     accept: "Please select a valid image file"
                 }
             },
-            submitHandler: function(form, event) {
+            submitHandler: function (form, event) {
                 event.preventDefault();
                 addNewCar();
                 return false;
