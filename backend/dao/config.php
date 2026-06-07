@@ -5,17 +5,18 @@ class Database
     private static $instance = null;
     private $connection;
 
-    private static $host = 'localhost';
-    private static $dbName = 'autoverse';
-    private static $username = 'root';
-    private static $password = '';
+    private static $host = getenv('DB_HOST');
+    private static $dbName = getenv('DB_NAME');
+    private static $username = getenv('DB_USERNAME');
+    private static $password = getenv('DB_PASSWORD');
+
 
     // PRIVATE constructor → sprječava new Database()
     private function __construct()
     {
         try {
             $this->connection = new PDO(
-                "mysql:host=" . self::$host . ";port=3307;dbname=" . self::$dbName,
+                "mysql:host=" . self::$host . ";dbname=" . self::$dbName,
                 self::$username,
                 self::$password,
                 [
@@ -29,7 +30,9 @@ class Database
     }
 
     // sprječava clone
-    private function __clone() {}
+    private function __clone()
+    {
+    }
 
     // sprječava unserialize
     public function __wakeup()
